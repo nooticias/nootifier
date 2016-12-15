@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+require realpath(__DIR__ . '/../bootstrap.php');
+require VENDOR_PATH . DS . 'autoload.php';
+
+use Cekurte\Nootifier\Command\NootifierCommand;
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+$application->setName('Nootifier');
+$application->setVersion('v1.0');
+$application->add(new NootifierCommand());
+$application->run();
